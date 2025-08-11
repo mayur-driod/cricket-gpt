@@ -1,40 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🏏 CricketGPT — Your AI Cricket Companion
 
-## Getting Started
+CricketGPT is an interactive AI-powered chatbot built with **Next.js**, **Vercel AI SDK**, and **React** that answers cricket-related questions in real-time.
+Whether you’re looking for the latest scores, player stats, ICC rankings, or fun cricket trivia, CricketGPT is here to help — like a digital commentator in your pocket!
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📹 Video Tutorial
+
+🎥 [Watch the Video Tutorial](https://youtu.be/d-VKYF4Zow0?si=chFjGNuiCdrtzaDO)
+Based on a FreeCodeCamp project... They built for F1.
+
+---
+
+## 🚀 Features
+
+* **Live cricket knowledge** — Ask about matches, players, rankings, and historic stats.
+* **Interactive UI** — Chat bubbles styled with a cricket theme (green fields, scoreboard colors, golden cricket balls).
+* **Prompt suggestions** — Quick cricket questions to get you started.
+* **Responsive design** — Works seamlessly on desktop and mobile.
+* **Customizable backend** — Easily swap in your own cricket API or RAG setup.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React + Next.js
+* **AI SDK:** Vercel `ai/react` for chat streaming
+* **Styling:** Custom CSS (cricket-themed UI)
+* **Deployment:** Vercel
+* **Language:** TypeScript
+
+---
+
+## 📂 Project Structure
+
+```
+app/
+  ├── api/chat/route.ts         # API route for chat
+  ├── assets/                   # Static assets (images, icons)
+  ├── components/               # Reusable UI components
+  │     ├── Bubble.tsx
+  │     ├── LoadingBubble.tsx
+  │     ├── PromptSuggestionButton.tsx
+  │     ├── PromptSuggestionRow.tsx
+  ├── global.css                # Global cricket-themed styles
+  ├── layout.tsx                # App layout wrapper
+  ├── page.tsx                  # Main chat UI
+
+scripts/
+  ├── loadDb.ts                  # Optional DB loading script
+
+.env                             # Environment variables
+package.json                     # Dependencies and scripts
+README.md                        # Documentation
+tsconfig.json                    # TypeScript config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## ⚡ Getting Started
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 1️⃣ Clone the repository
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+git clone https://github.com/mayur-driod/cricket-gpt.git
+cd cricket-gpt
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2️⃣ Install dependencies
 
-## Learn More
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 3️⃣ Add your API keys
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Create a `.env` file and add your AI API key ( OpenAI ):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```env
+ASTRA_DB_NAMESPACE = "default_keyspace"
+ASTRA_DB_COLLECTION="cricketgpt"
+ASTRA_DB_API_ENDPOINT=""
+ASTRA_DB_APPLICATION_TOKEN=""
+OPENAI_API_KEY=""
+```
 
-## Deploy on Vercel
+### 4️⃣ Run locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev 
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Visit: **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 💡 How It Works
+
+1. **User asks a cricket-related question.**
+2. The message is sent to the AI backend.
+3. AI processes the query and returns a relevant answer (can be live data if API integrated).
+4. Response is displayed in a **scoreboard-style bubble**.
+
+---
+
+## 🎯 Example Questions
+
+* 🏏 "Who is the current ICC Men’s ODI No. 1 batsman?"
+* 📊 "What’s the highest individual Test score?"
+* 📅 "When is the next India vs Pakistan match?"
+* ⚡ "Who bowled the fastest ball in cricket history?"
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free to use and modify.
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! If you’d like to suggest new features or improvements, open an issue.
+
+---
+
+**Built with ❤️ for cricket fans worldwide.**
