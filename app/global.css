@@ -1,0 +1,157 @@
+* {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #0b6623, #074d17); /* lush green field */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  width: 85vw;
+  height: 85vh;
+  background: rgba(255, 255, 255, 0.1); /* glassmorphism effect */
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+section {
+  width: 100%;
+}
+
+section.populated {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: auto;
+}
+
+.starter-text {
+  padding: 0 60px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+form {
+  width: 100%;
+  display: flex;
+}
+
+form input {
+  height: 55px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+input.question-box {
+  width: 85%;
+  padding: 12px;
+  font-size: 16px;
+  color: #222;
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+input[type="submit"] {
+  width: 15%;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #f9a825, #ff6f00); /* golden cricket ball color */
+  border: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(135deg, #ffb300, #f57c00);
+}
+
+input:focus {
+  outline: none;
+}
+
+.bubble {
+  margin: 8px;
+  padding: 12px 16px;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 4px 12px;
+  width: 80%;
+  text-align: left;
+}
+
+.bubble.user {
+  border-radius: 20px 20px 0 20px;
+  background: linear-gradient(135deg, #f9a825, #ff6f00); /* golden/orange tone */
+  color: white;
+  margin-left: auto;
+}
+
+.bubble.assistant {
+  border-radius: 20px 20px 20px 0;
+  background: linear-gradient(135deg, #42a5f5, #1e88e5); /* scoreboard blue */
+  color: white;
+}
+
+.loader {
+  margin: 10px;
+  width: 60px;
+  aspect-ratio: 4;
+  background: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000)
+      0 50%,
+    no-repeat radial-gradient(circle closest-side, #fff 90%, #0000) 50% 50%,
+    no-repeat radial-gradient(circle closest-side, #fff 90%, #0000) 100% 50%;
+  background-size: calc(100% / 3) 100%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  33% {
+    background-size: calc(100% / 3) 0%, calc(100% / 3) 100%, calc(100% / 3) 100%;
+  }
+  50% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 0, calc(100% / 3) 100%;
+  }
+  66% {
+    background-size: calc(100% / 3) 100%, calc(100% / 3) 100%, calc(100% / 3) 0;
+  }
+}
+
+.prompt-suggestions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-suggestion-button {
+  margin: 6px;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 16px;
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.prompt-suggestion-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}

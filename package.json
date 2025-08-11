@@ -14,6 +14,7 @@
     "@datastax/astra-db-ts": "^1.5.0",
     "@langchain/community": "^0.3.29",
     "@langchain/core": "^0.3.39",
+    "ai": "^3.4.33",
     "dotenv": "^16.4.7",
     "langchain": "^0.3.15",
     "next": "15.1.6",
